@@ -1,0 +1,311 @@
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroWorld - Músicas</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+    
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0c0c1d, #1f1f3a);
+            color: #fff;
+            overflow-x: hidden;
+        }
+    
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+    
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+    
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+    
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+    
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+    
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin: 0;
+            background: linear-gradient(90deg, #ff00cc, #3333ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(255, 0, 204, 0.5), 0 0 20px rgba(51, 51, 255, 0.5);
+        }
+    
+        .navigation {
+            display: flex;
+            gap: 1rem;
+        }
+    
+        .nav-button {
+            background: linear-gradient(90deg, #ff00cc, #3333ff);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+    
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(255, 0, 204, 0.4);
+        }
+    
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+    
+        .music-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+    
+        .music-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+    
+        .music-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 0, 204, 0.3);
+        }
+    
+        .music-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+    
+        .music-info h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+    
+        .music-info p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    
+        .play-button {
+            background: linear-gradient(90deg, #ff00cc, #3333ff);
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+    
+        .play-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 10px rgba(255, 0, 204, 0.4);
+        }
+    
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navigation {
+                margin-top: 1rem;
+            }
+            .music-container {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <div class="stars"></div>
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#grad)" stroke-width="5"/>
+                        <path d="M50 5 L50 95 M5 50 L95 50" stroke="url(#grad)" stroke-width="5"/>
+                        <defs>
+                            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ff00cc;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#3333ff;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h1>AstroWorld</h1>
+                </div>
+                <nav class="navigation">
+                    <a href="index.html" class="nav-button">Início</a>
+                    <a href="musicas.html" class="nav-button">Músicas</a>
+                    <a href="artistas.html" class="nav-button">Artistas</a>
+                    <a href="perfil.html" class="nav-button">Perfil</a>
+                    <a href="playlists.html" class="nav-button">Playlists Criadas</a>
+                    <a href="contato.html" class="nav-button">Contato</a>
+                </nav>
+            </div>
+        </header>
+    
+        <main>
+            <h2>Descubra Novas Músicas</h2>
+            <div class="music-container">
+                <div class="music-card">
+                    <img src="https://picsum.photos/seed/song1/300/300" alt="Capa do álbum com arte abstrata em tons de azul e roxo" class="music-image" width="300" height="300">
+                    <div class="music-info">
+                        <h3>Nebulosa Sonora</h3>
+                        <p>Artista: Estrela Cadente</p>
+                        <p>Gênero: Electro Space</p>
+                        <button class="play-button">▶ Reproduzir</button>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <img src="https://picsum.photos/seed/song2/300/300" alt="Capa do álbum mostrando uma paisagem urbana futurística" class="music-image" width="300" height="300">
+                    <div class="music-info">
+                        <h3>Pulsar Urbano</h3>
+                        <p>Artista: Neon Horizon</p>
+                        <p>Gênero: Synth Pop</p>
+                        <button class="play-button">▶ Reproduzir</button>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <img src="https://picsum.photos/seed/song3/300/300" alt="Capa do álbum com uma ilustração de um astronauta flutuando no espaço" class="music-image" width="300" height="300">
+                    <div class="music-info">
+                        <h3>Gravidade Zero</h3>
+                        <p>Artista: Cosmos Voice</p>
+                        <p>Gênero: Ambient</p>
+                        <button class="play-button">▶ Reproduzir</button>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <img src="https://picsum.photos/seed/song4/300/300" alt="Capa do álbum com um padrão geométrico colorido" class="music-image" width="300" height="300">
+                    <div class="music-info">
+                        <h3>Fractais Sonoros</h3>
+                        <p>Artista: Quantum Beat</p>
+                        <p>Gênero: Glitch Hop</p>
+                        <button class="play-button">▶ Reproduzir</button>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <img src="https://picsum.photos/seed/song5/300/300" alt="Capa do álbum mostrando uma galáxia espiral" class="music-image" width="300" height="300">
+                    <div class="music-info">
+                        <h3>Vórtice Estelar</h3>
+                        <p>Artista: Nova Harmonia</p>
+                        <p>Gênero: Space Jazz</p>
+                        <button class="play-button">▶ Reproduzir</button>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <img src="https://picsum.photos/seed/song6/300/300" alt="Capa do álbum com uma aurora boreal estilizada" class="music-image" width="300" height="300">
+                    <div class="music-info">
+                        <h3>Aurora Sônica</h3>
+                        <p>Artista: Polar Lights</p>
+                        <p>Gênero: Chillwave</p>
+                        <button class="play-button">▶ Reproduzir</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    
+        <footer>
+            <p>&copy; 2023 AstroWorld. Todos os direitos reservados.</p>
+        </footer>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script>
+            // Animação de estrelas usando Three.js
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.querySelector('.stars').appendChild(renderer.domElement);
+    
+            const starsGeometry = new THREE.BufferGeometry();
+            const starsMaterial = new THREE.PointsMaterial({ color: 0xFFFFFF, size: 0.1 });
+    
+            const starsVertices = [];
+            for (let i = 0; i < 10000; i++) {
+                const x = (Math.random() - 0.5) * 2000;
+                const y = (Math.random() - 0.5) * 2000;
+                const z = (Math.random() - 0.5) * 2000;
+                starsVertices.push(x, y, z);
+            }
+    
+            starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starsVertices, 3));
+            const starField = new THREE.Points(starsGeometry, starsMaterial);
+            scene.add(starField);
+    
+            camera.position.z = 1;
+    
+            function animate() {
+                requestAnimationFrame(animate);
+                starField.rotation.y += 0.0002;
+                renderer.render(scene, camera);
+            }
+    
+            animate();
+    
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+    
+            // Funcionalidade dos botões de reprodução
+            document.querySelectorAll('.play-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const songTitle = this.parentElement.querySelector('h3').textContent;
+                    alert(`Reproduzindo: ${songTitle}`);
+                    // Aqui você pode adicionar a lógica real de reprodução da música
+                });
+            });
+        </script>
+    </body>
+    </html>

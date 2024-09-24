@@ -1,0 +1,277 @@
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroWorld - Impulsionando Artistas Pequenos</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+    
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0c0c1d, #1f1f3a);
+            color: #fff;
+            overflow-x: hidden;
+        }
+    
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+    
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+    
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+    
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+    
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+    
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin: 0;
+            background: linear-gradient(90deg, #ff00cc, #3333ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(255, 0, 204, 0.5), 0 0 20px rgba(51, 51, 255, 0.5);
+        }
+    
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(255,0,204,0.1)" points="0,100 100,0 100,100"/><polygon fill="rgba(51,51,255,0.1)" points="0,100 0,0 100,0"/></svg>');
+            background-size: cover;
+            opacity: 0.5;
+            z-index: 1;
+        }
+    
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+    
+        .navigation {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+    
+        .nav-button {
+            background: linear-gradient(90deg, #ff00cc, #3333ff);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+    
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(255, 0, 204, 0.4);
+        }
+    
+        .hero {
+            text-align: center;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+    
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+    
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+    
+        .feature {
+            flex-basis: calc(33.333% - 2rem);
+            margin: 1rem;
+            padding: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+    
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+    
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    
+        @media (max-width: 768px) {
+            .feature {
+                flex-basis: calc(50% - 2rem);
+            }
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navigation {
+                margin-top: 1.5rem;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .feature {
+                flex-basis: 100%;
+            }
+            .nav-button {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <div class="stars"></div>
+        <header>
+            <div class="header-bg"></div>
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#grad)" stroke-width="5"/>
+                        <path d="M50 5 L50 95 M5 50 L95 50" stroke="url(#grad)" stroke-width="5"/>
+                        <defs>
+                            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ff00cc;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#3333ff;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h1>AstroWorld</h1>
+                </div>
+            </div>
+        </header>
+    
+        <main>
+            <div class="navigation">
+                <a href="index.html" class="nav-button">Início</a>
+                    <a href="musicas.html" class="nav-button">Músicas</a>
+                    <a href="artistas.html" class="nav-button">Artistas</a>
+                    <a href="perfil.html" class="nav-button">Perfil</a>
+                    <a href="playlists.html" class="nav-button">Playlists Criadas</a>
+                    <a href="contato.html" class="nav-button">Contato</a>
+            </div>
+    
+            <section class="hero">
+                <h2>Descubrindo e Impulsionando Novos Talentos Musicais</h2>
+                <p>AstroWorld é a plataforma que conecta artistas emergentes a oportunidades únicas no universo da música.</p>
+            </section>
+    
+            <section class="features">
+                <div class="feature">
+                    <div class="feature-icon">🎵</div>
+                    <h3>Exposição</h3>
+                    <p>Ganhe visibilidade para o seu trabalho através de nossa rede de curadores e fãs de música.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Networking</h3>
+                    <p>Conecte-se com outros artistas, produtores e profissionais da indústria musical.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Crescimento</h3>
+                    <p>Acesse ferramentas e recursos para impulsionar sua carreira musical ao próximo nível.</p>
+                </div>
+            </section>
+        </main>
+    
+        <footer>
+            <p>&copy; 2023 AstroWorld. Todos os direitos reservados.</p>
+        </footer>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script>
+            // Animação de estrelas usando Three.js
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.querySelector('.stars').appendChild(renderer.domElement);
+    
+            const starsGeometry = new THREE.BufferGeometry();
+            const starsMaterial = new THREE.PointsMaterial({ color: 0xFFFFFF, size: 0.1 });
+    
+            const starsVertices = [];
+            for (let i = 0; i < 10000; i++) {
+                const x = (Math.random() - 0.5) * 2000;
+                const y = (Math.random() - 0.5) * 2000;
+                const z = (Math.random() - 0.5) * 2000;
+                starsVertices.push(x, y, z);
+            }
+    
+            starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starsVertices, 3));
+            const starField = new THREE.Points(starsGeometry, starsMaterial);
+            scene.add(starField);
+    
+            camera.position.z = 1;
+    
+            function animate() {
+                requestAnimationFrame(animate);
+                starField.rotation.y += 0.0002;
+                renderer.render(scene, camera);
+            }
+    
+            animate();
+    
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        </script>
+    </body>
+    </html>
